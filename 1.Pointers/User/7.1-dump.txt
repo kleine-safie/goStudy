@@ -1,0 +1,25 @@
+TEXT main.createUser(SB) /workspaces/goStudy/1.Pointers/User/7-1.EscapeAnalysis.go
+  7-1.EscapeAnalysis.go:8       0x466b60                493b6610                CMPQ SP, 0x10(R14)
+  7-1.EscapeAnalysis.go:8       0x466b64                765b                    JBE 0x466bc1
+  7-1.EscapeAnalysis.go:8       0x466b66                55                      PUSHQ BP
+  7-1.EscapeAnalysis.go:8       0x466b67                4889e5                  MOVQ SP, BP
+  7-1.EscapeAnalysis.go:8       0x466b6a                4883ec20                SUBQ $0x20, SP
+  7-1.EscapeAnalysis.go:9       0x466b6e                488d050bab0000          LEAQ 0xab0b(IP), AX
+  7-1.EscapeAnalysis.go:9       0x466b75                e82646faff              CALL runtime.newobject(SB)
+  7-1.EscapeAnalysis.go:9       0x466b7a                4889442418              MOVQ AX, 0x18(SP)
+  7-1.EscapeAnalysis.go:9       0x466b7f                48c7400806000000        MOVQ $0x6, 0x8(AX)
+  7-1.EscapeAnalysis.go:9       0x466b87                48c7401806000000        MOVQ $0x6, 0x18(AX)
+  7-1.EscapeAnalysis.go:9       0x466b8f                488d0dc32b0100          LEAQ 0x12bc3(IP), CX
+  7-1.EscapeAnalysis.go:9       0x466b96                488908                  MOVQ CX, 0(AX)
+  7-1.EscapeAnalysis.go:9       0x466b99                488d0dbf2b0100          LEAQ 0x12bbf(IP), CX
+  7-1.EscapeAnalysis.go:9       0x466ba0                48894810                MOVQ CX, 0x10(AX)
+  7-1.EscapeAnalysis.go:11      0x466ba4                488d1d722e0100          LEAQ 0x12e72(IP), BX
+  7-1.EscapeAnalysis.go:11      0x466bab                b908000000              MOVL $0x8, CX
+  7-1.EscapeAnalysis.go:11      0x466bb0                e82b000000              CALL main.updateStatus(SB)
+  7-1.EscapeAnalysis.go:12      0x466bb5                488b442418              MOVQ 0x18(SP), AX
+  7-1.EscapeAnalysis.go:12      0x466bba                4883c420                ADDQ $0x20, SP
+  7-1.EscapeAnalysis.go:12      0x466bbe                5d                      POPQ BP
+  7-1.EscapeAnalysis.go:12      0x466bbf                90                      NOPL
+  7-1.EscapeAnalysis.go:12      0x466bc0                c3                      RET
+  7-1.EscapeAnalysis.go:8       0x466bc1                e8dab0ffff              CALL runtime.morestack_noctxt.abi0(SB)
+  7-1.EscapeAnalysis.go:8       0x466bc6                eb98                    JMP main.createUser(SB)
