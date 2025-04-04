@@ -1,7 +1,7 @@
 
 ```
-go build -gcflags "-m -l" study
-go build -gcflags "-m=2 -l" study
+go build -gcflags "-m -l" user
+go build -gcflags "-m=2 -l" user
 ```
 https://github.com/golang/go/blob/master/src/cmd/compile/internal/escape/escape.go
 
